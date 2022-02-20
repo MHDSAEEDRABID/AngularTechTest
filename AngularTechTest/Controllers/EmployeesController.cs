@@ -1,7 +1,8 @@
 ﻿using AngularTechTest.Data;
 using AngularTechTest.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 namespace AngularTechTest.Controllers
 {
     public class EmployeesController : Controller
@@ -11,10 +12,16 @@ namespace AngularTechTest.Controllers
         {
             this.context = context;
         }
-        public IActionResult Index()
+        [Route("api/Get")]
+        [HttpGet]
+        public IActionResult GetEmployees()
         {
             List<Employee> employees = context.Employees.ToList();
-            return View(employees);
+            return Json(employees);
+        }
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }

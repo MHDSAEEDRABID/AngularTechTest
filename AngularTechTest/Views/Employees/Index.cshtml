@@ -1,4 +1,24 @@
-﻿@model List<Employee>
-@{
+﻿@{
     ViewData["Title"] = "Employee page";
 }
+<div ng-app="myApp">
+    <div class="container" ng-controller="EmployeeController" >
+     <table class="table table-bordered">
+         <thead>
+             <tr>Employees</tr>
+         </thead>
+         <tbody>
+             <tr dir-paginate="value in Employees | itemsPerPage: 5 track by value.id">
+                 <td>{{value.id}}</td>
+                 <td>{{value.name}}</td>
+                 <td>{{value.department}}</td>
+                 <td>{{value.salary}}</td>
+             </tr>
+         </tbody>
+     </table>
+     <dir-pagination-controls 
+            boundary-links="true" 
+            direction-links="true" >
+            </dir-pagination-controls>
+    </div>
+</div>
