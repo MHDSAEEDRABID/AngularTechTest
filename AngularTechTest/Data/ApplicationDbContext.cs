@@ -10,6 +10,7 @@ namespace AngularTechTest.Data
 
         }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Models.Task> Tasks { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Data Seeding

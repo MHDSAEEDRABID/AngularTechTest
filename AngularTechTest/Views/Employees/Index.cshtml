@@ -8,13 +8,16 @@
              <tr>Employees</tr>
          </thead>
          <tbody>
-             <tr dir-paginate="value in Employees | itemsPerPage: 5 track by value.id">
+             <tr dir-paginate="value in Employees | itemsPerPage: 10 track by value.id" ng-click="open()">
                  <td>{{value.id}}</td>
                  <td>{{value.name}}</td>
                  <td>{{value.department}}</td>
                  <td>{{value.salary}}</td>
              </tr>
          </tbody>
+         <tfoot>
+             <tr><td align="center" colspan=4>Total Salary : {{Total()}}</td></tr>
+         </tfoot>
      </table>
      <dir-pagination-controls 
             boundary-links="true" 

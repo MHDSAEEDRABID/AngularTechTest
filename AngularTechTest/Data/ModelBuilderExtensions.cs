@@ -18,6 +18,11 @@ namespace AngularTechTest.Data
                                                    new Employee { Id = 9, Name = "Ema", Department = "IT", Salary = 85000 },
                                                    new Employee { Id = 10, Name = "Dani", Department = "Operation", Salary = 90000 }
                                                    );
+            modelBuilder.Entity<Models.Task>().HasData(new Models.Task { Id = 1, TaskName = "Install System" },
+                                                       new Models.Task { Id = 2, TaskName = "Deploy on IIS" },
+                                                       new Models.Task { Id =3 ,TaskName = "Training Customers"},
+                                                       new Models.Task { Id =4 ,TaskName = "Analysis"},
+                                                       new Models.Task { Id =5 , TaskName = "SRS"});
         }
     }
 }

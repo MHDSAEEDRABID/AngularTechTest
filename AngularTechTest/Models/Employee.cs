@@ -15,5 +15,6 @@ namespace AngularTechTest.Models
         public string Department { get; set; }
         [Required]
         public int Salary { get; set; }
+        public List<Models.Task> Tasks { get; set; } = new();
     }
 }
